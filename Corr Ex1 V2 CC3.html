@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Hello!</title>
+</head>
+
+<body>
+
+<input type="number" id="t1" />
+<select id='sel1'>
+<option>Mille</option>
+<option>Kilometre</option>
+</select>
+<select id='sel2'>
+<option>Metre</option>
+<option>Kilometre</option>
+</select>
+   <label>Résultat<span id="sp1"> </span></label>
+   <script>
+   var res=1;
+   var t1=document.getElementById('t1');
+   var sel1=document.getElementById('sel1');
+    var sel2=document.getElementById('sel2');
+    var sp1=document.getElementById('sp1');
+     var h;
+   function convertir(x,y)
+   {
+     if(x=='Mille' && y=='Kilometre')
+     res=1609.34
+    if(x=='Mille' && y=="Metre")
+    res=1.61
+    if(x=="Kilometre" && y=="Metre" )
+    res=1000;
+    sp1.value=res;
+    sp1.innerHTML=res*h;
+     }
+     t1.onchange=function()
+     {
+       h=t1.value;
+        convertir(sel1.value,sel2.value)
+     }
+     sel1.onchange=function()
+     {  h=t1.value;
+        convertir(sel1.value,sel2.value)
+     }
+     sel2.onchange=function()
+     {
+         h=t1.value;
+        convertir(sel1.value,sel2.value)
+     }
+   </script>
+</body>
+</html>
